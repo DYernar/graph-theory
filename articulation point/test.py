@@ -1,4 +1,4 @@
-import ap_algo as tj
+import tarjan as tj
 import unittest
 
 class Test(unittest.TestCase):

@@ -7,7 +7,7 @@ import sys
     # 1. n is root and it has at least two childer
     # 2. n is not root and it has a child v such that no vertex in subtree of 
     #    v is connected to ancestor of v using backedge
-# time of the earliest node that can be reached from subtree of n 
+# s 
 # lowTime[n] = min(disc[n], disc[w], lowTime[v]), w - all back edges visited from u, low[v] - for all children of n 
     # if disc[u] <= low[v] then u is cut vertex
 class Graph:
@@ -17,14 +17,13 @@ class Graph:
         self.time = 0
 
     def apAlgo(self):
-       
+        if (len(self.nodes) == 0):
+            return []
         result = {}
         visited = {}
         discoveredTime = {}
         lowTime = {}  
-        
         parent = {}
-        time = 0
         for n in self.nodes:
             parent[n] = None
             lowTime[n] = 0
@@ -70,5 +69,4 @@ def main(filename):
     res = g.apAlgo()
     return res
 	#print(res)
-
 
